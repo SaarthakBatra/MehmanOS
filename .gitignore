@@ -1,0 +1,17 @@
+# Environments
+.env
+.env.local
+.env.*
+!.env.example
+
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Tests
+.pytest_cache/
+
+# Mac / OS
+.DS_Store
