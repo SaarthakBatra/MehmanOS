@@ -21,7 +21,7 @@ from ui.app.src.theme import inject_theme, render_empty_state
 # Setup the main Streamlit page configuration
 st.set_page_config(
     page_title="Mehman Mira", 
-    page_icon="🏨", 
+    page_icon="ui/app/src/assets/logo.svg", 
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -222,9 +222,23 @@ def main() -> None:
     # Top Right Menu
     with st.container(key="top_right_menu"):
         with st.popover(":material/settings:", use_container_width=False):
-            if st.button("Load Chat"):
+            import datetime
+            today = datetime.date.today().strftime("%d %B %Y")
+            st.markdown(f"""
+            <div class="mh-pill-mobile">
+                <span class="dot"></span>
+                <span class="date">{today}</span>
+                <span class="sid" data-sid="{st.session_state.sid}">SID: {st.session_state.sid} 📋</span>
+            </div>
+            """, unsafe_allow_html=True)
+            
+            st.toggle("Debug View", key="show_debug_mobile")
+            if st.button("New Chat", key="new_chat_mobile", use_container_width=True):
+                new_chat_dialog()
+                
+            if st.button("Load Chat", use_container_width=True):
                 load_chat_dialog()
-            if st.button("Clear Database"):
+            if st.button("Clear Database", use_container_width=True):
                 clear_db_dialog()
     
     # Render bottom bar first
@@ -237,7 +251,7 @@ def main() -> None:
                 new_chat_dialog()
 
     # Layout logic: split screen if debug is shown
-    if st.session_state.get("show_debug", False):
+    if st.session_state.get("show_debug", False) or st.session_state.get("show_debug_mobile", False):
         chat_col, debug_col = st.columns([6, 4])
     else:
         chat_col = st.container()
@@ -302,8 +316,7 @@ def main() -> None:
                     if st.session_state.get("last_history_len", 0) != current_history_len:
                         st.session_state.last_history_len = current_history_len
                         import time
-                        import streamlit.components.v1 as components
-                        components.html(f"""
+                        st.html(f"""
                         <script>
                             // Force script execution on new messages: {time.time()}
                             const targetDoc = window.parent.document;
@@ -326,7 +339,7 @@ def main() -> None:
                             setTimeout(forceScroll, 50);
                             setTimeout(forceScroll, 400);
                         </script>
-                        """, height=0, width=0)
+                        """)
                     
                     # Handle new user input inline for smooth animation
                     if prompt:
@@ -337,8 +350,7 @@ def main() -> None:
                         
                         # Trigger scroll immediately before blocking for API
                         import time
-                        import streamlit.components.v1 as components
-                        components.html(f"""
+                        st.html(f"""
                         <script>
                             const targetDoc = window.parent.document;
                             function forceScroll() {{
@@ -354,7 +366,7 @@ def main() -> None:
                             setTimeout(forceScroll, 10);
                             setTimeout(forceScroll, 150);
                         </script>
-                        """, height=0, width=0)
+                        """)
                         
                         # 2. Open assistant bubble and trigger spinner
                         with st.chat_message("assistant", avatar="ui/app/src/assets/mira_avatar.jpg"):

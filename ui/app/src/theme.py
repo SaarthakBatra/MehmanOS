@@ -61,7 +61,7 @@ html, body, [data-testid="stApp"], [data-testid="stAppViewContainer"], [data-tes
 .mh-header{{position:fixed;pointer-events:none;top:0;left:0;width:100%;height:var(--hdr);z-index:50;display:flex;align-items:center;
   justify-content:space-between;padding:0 clamp(12px,2vw,32px);border-bottom:1px solid rgba(255,255,255,.1);
   background:rgba(0,0,0,.4);backdrop-filter:blur(16px);box-sizing:border-box}}
-.mh-header h1{{margin:0;font-size:clamp(1.3rem,2.4vw,2.2rem);font-weight:900;letter-spacing:-.04em;color:#fff}}
+.mh-header h1{{margin:0;font-size:clamp(2.8rem,3vw,5.0rem) !important;font-weight:900;letter-spacing:-.04em;color:#fff}}
 .mh-pill{{pointer-events:auto;padding:8px 18px;border-radius:999px;background:rgba(0,0,0,.9);border:1px solid rgba(255,255,255,.1);
   font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;white-space:nowrap;display:flex;gap:12px;align-items:center;margin-right:60px}}
 .mh-pill span.date {{ color: #e5e7eb; }}
@@ -119,6 +119,31 @@ html, body, [data-testid="stApp"], [data-testid="stAppViewContainer"], [data-tes
 .st-key-debug_panel_container [data-testid="stExpander"] [data-testid="stVerticalBlock"] {{
   max-height: 400px;
   overflow-y: auto;
+}}
+/* --- Mobile Responsiveness Media Queries --- */
+@media (min-width: 769px) {{
+  /* On desktop, hide the mobile versions in the popover */
+  .st-key-show_debug_mobile, .st-key-new_chat_mobile, .mh-pill-mobile {{ display: none !important; }}
+}}
+@media (max-width: 768px) {{
+  /* On mobile, hide the desktop versions */
+  .mh-pill {{ display: none !important; }}
+  .st-key-show_debug, .st-key-new_chat {{ display: none !important; }}
+  
+  /* On mobile, show the mobile versions in the popover */
+  .st-key-show_debug_mobile, .st-key-new_chat_mobile {{ display: block !important; }}
+  .mh-pill-mobile {{ 
+    pointer-events: auto; padding: 8px 18px; border-radius: 999px; 
+    background: rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; 
+    text-transform: uppercase; color: #fff; white-space: nowrap; 
+    display: flex; gap: 12px; align-items: center; margin-bottom: 12px; justify-content: center;
+  }}
+  .mh-pill-mobile span.date {{ color: #e5e7eb; }}
+  .mh-pill-mobile span.sid {{ color: #a855f7; border-left: 1px solid rgba(255,255,255,0.2); padding-left: 12px; }}
+  
+  /* On mobile, expand the input bar to take full width */
+  [data-testid="stChatInput"] {{ width: 100% !important; flex: 1 1 100% !important; min-width: 100% !important; }}
 }}
 </style>
 """
