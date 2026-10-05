@@ -182,7 +182,7 @@ sequenceDiagram
             Tool->>DB: Filter properties.json
             DB-->>Tool: Matching rooms
             Tool-->>Orch: JSON result string (capped at 5 000 chars)
-            Orch->>Orch: Append to tool_traces; last_action="call_tool"
+            Orch->>Orch: Append to tool_traces and set last_action="call_tool"
             Orch->>Orch: Append FunctionResponse to history
         else text response returned
             Gemini-->>Orch: Natural language reply + <state_update>{...}</state_update>
@@ -194,7 +194,7 @@ sequenceDiagram
     end
 
     Orch-->>App: TurnResult(response_text, current_state, upsell_suggestions)
-    App->>App: view_model: strip <state_update> tags; summarise traces
+    App->>App: view_model: strip <state_update> tags and summarise traces
     App-->>Guest: Sanitised reply + "Agent Steps" expanders
     App->>App: Update debug panel with live BookingContext
 ```
