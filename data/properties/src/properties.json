@@ -1,0 +1,194 @@
+[
+  {
+    "property_id": "GOA001",
+    "name": "The Dunes Retreat",
+    "location": "Calangute, North Goa",
+    "description": "A boutique beachfront resort offering privacy and luxury.",
+    "rating": 4.5,
+    "room_types": [
+      {
+        "room_id": "GOA001-DELUXE",
+        "name": "Deluxe Sea View",
+        "capacity": 2,
+        "price_per_night": 8500,
+        "amenities": ["AC", "sea view", "king bed", "WiFi", "minibar"],
+        "policies": {
+          "cancellation": "Free cancellation up to 48 hours before check-in",
+          "pet_policy": "No pets allowed",
+          "child_policy": "Children under 5 stay free",
+          "check_in": "14:00",
+          "check_out": "11:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 2", "price": 800},
+          {"id": "AIRPORT_PICKUP", "name": "Airport Transfer", "price": 1500},
+          {"id": "LATE_CHECKOUT", "name": "Late Checkout (2 PM)", "price": 1000}
+        ]
+      },
+      {
+        "room_id": "GOA001-FAMILY",
+        "name": "Family Suite",
+        "capacity": 4,
+        "price_per_night": 14000,
+        "amenities": ["AC", "sea view", "2 queen beds", "WiFi", "kitchenette"],
+        "policies": {
+          "cancellation": "Free cancellation up to 48 hours before check-in",
+          "pet_policy": "No pets allowed",
+          "child_policy": "Children under 5 stay free",
+          "check_in": "14:00",
+          "check_out": "11:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 4", "price": 1600},
+          {"id": "AIRPORT_PICKUP", "name": "Airport Transfer", "price": 1500}
+        ]
+      },
+      {
+        "room_id": "GOA001-POOL",
+        "name": "Private Pool Villa",
+        "capacity": 4,
+        "price_per_night": 22000,
+        "amenities": ["AC", "pool", "king bed", "WiFi", "butler service"],
+        "policies": {
+          "cancellation": "Non-refundable",
+          "pet_policy": "Pets allowed on request",
+          "child_policy": "Children under 5 stay free",
+          "check_in": "14:00",
+          "check_out": "11:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 4", "price": 1600},
+          {"id": "AIRPORT_PICKUP", "name": "Airport Transfer", "price": 1500},
+          {"id": "LATE_CHECKOUT", "name": "Late Checkout (2 PM)", "price": 1000}
+        ]
+      }
+    ]
+  },
+  {
+    "property_id": "GOA002",
+    "name": "Emerald Gardens",
+    "location": "Assagao, North Goa",
+    "description": "A tranquil boutique property surrounded by nature.",
+    "rating": 4.2,
+    "room_types": [
+      {
+        "room_id": "GOA002-GARDEN",
+        "name": "Garden Room",
+        "capacity": 2,
+        "price_per_night": 6000,
+        "amenities": ["AC", "garden view", "queen bed", "WiFi"],
+        "policies": {
+          "cancellation": "Free cancellation up to 24 hours before check-in",
+          "pet_policy": "Pets allowed",
+          "child_policy": "Children under 5 stay free",
+          "check_in": "13:00",
+          "check_out": "10:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 2", "price": 600},
+          {"id": "BICYCLE_RENTAL", "name": "Bicycle Rental", "price": 300}
+        ]
+      },
+      {
+        "room_id": "GOA002-COTTAGE",
+        "name": "Cottage",
+        "capacity": 3,
+        "price_per_night": 11000,
+        "amenities": ["AC", "garden view", "king bed", "sofa bed", "WiFi"],
+        "policies": {
+          "cancellation": "Free cancellation up to 24 hours before check-in",
+          "pet_policy": "Pets allowed",
+          "child_policy": "Children under 5 stay free",
+          "check_in": "13:00",
+          "check_out": "10:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 3", "price": 900},
+          {"id": "AIRPORT_PICKUP", "name": "Airport Transfer", "price": 1200}
+        ]
+      }
+    ]
+  },
+  {
+    "property_id": "GOA003",
+    "name": "Taj Exotica Resort & Spa",
+    "location": "Benaulim, South Goa",
+    "description": "A luxury beachfront resort with world-class amenities.",
+    "rating": 4.9,
+    "room_types": [
+      {
+        "room_id": "GOA003-STANDARD",
+        "name": "Standard Room",
+        "capacity": 2,
+        "price_per_night": 9000,
+        "amenities": ["AC", "resort view", "king bed", "WiFi", "minibar"],
+        "policies": {
+          "cancellation": "Free cancellation up to 72 hours before check-in",
+          "pet_policy": "No pets allowed",
+          "child_policy": "Children under 12 stay free",
+          "check_in": "15:00",
+          "check_out": "12:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 2", "price": 1000}
+        ]
+      },
+      {
+        "room_id": "GOA003-DELUXE",
+        "name": "Deluxe Room",
+        "capacity": 2,
+        "price_per_night": 13000,
+        "amenities": ["AC", "sea view", "king bed", "WiFi", "minibar", "balcony"],
+        "policies": {
+          "cancellation": "Free cancellation up to 72 hours before check-in",
+          "pet_policy": "No pets allowed",
+          "child_policy": "Children under 12 stay free",
+          "check_in": "15:00",
+          "check_out": "12:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 2", "price": 1000},
+          {"id": "SPA_VOUCHER", "name": "Spa Session", "price": 3000}
+        ]
+      },
+      {
+        "room_id": "GOA003-SUITE",
+        "name": "Suite",
+        "capacity": 3,
+        "price_per_night": 25000,
+        "amenities": ["AC", "sea view", "king bed", "living room", "WiFi", "minibar"],
+        "policies": {
+          "cancellation": "Non-refundable",
+          "pet_policy": "No pets allowed",
+          "child_policy": "Children under 12 stay free",
+          "check_in": "15:00",
+          "check_out": "12:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 3", "price": 1500},
+          {"id": "AIRPORT_PICKUP", "name": "Luxury Airport Transfer", "price": 3000},
+          {"id": "LATE_CHECKOUT", "name": "Late Checkout (2 PM)", "price": 2000}
+        ]
+      },
+      {
+        "room_id": "GOA003-VILLA",
+        "name": "Presidential Villa",
+        "capacity": 6,
+        "price_per_night": 45000,
+        "amenities": ["AC", "sea view", "3 king beds", "private pool", "kitchen", "butler service", "WiFi"],
+        "policies": {
+          "cancellation": "Non-refundable",
+          "pet_policy": "No pets allowed",
+          "child_policy": "Children under 12 stay free",
+          "check_in": "15:00",
+          "check_out": "12:00"
+        },
+        "add_ons": [
+          {"id": "BREAKFAST", "name": "Breakfast for 6", "price": 3000},
+          {"id": "AIRPORT_PICKUP", "name": "Luxury Airport Transfer (Van)", "price": 5000},
+          {"id": "PRIVATE_CHEF", "name": "Private Chef for Dinner", "price": 8000}
+        ]
+      }
+    ]
+  }
+]

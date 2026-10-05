@@ -1,0 +1,14 @@
+{
+  "test_id": "TC002",
+  "description": "Test case TC002",
+  "mock_current_date": "2026-10-01",
+  "turns": [
+    {
+      "user": "Hello",
+      "expected_state_delta": {},
+      "expected_tool_called": "search_properties",
+      "expected_next_action": "call_tool",
+      "must_not_hallucinate": []
+    }
+  ]
+}
