@@ -1,5 +1,10 @@
+import sys
 import os
 import uuid
+
+# Ensure the repository root is in the Python path for Streamlit Cloud
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../")))
+
 import streamlit as st
 from pydantic import ValidationError
 
