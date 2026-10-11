@@ -81,7 +81,11 @@ TOOL_SCHEMAS = [
                 "room_id": Schema(type=Type.STRING),
                 "check_in": Schema(type=Type.STRING),
                 "check_out": Schema(type=Type.STRING),
-                "add_on_ids": Schema(type=Type.ARRAY, items=Schema(type=Type.STRING))
+                "add_on_ids": Schema(
+                    type=Type.ARRAY,
+                    items=Schema(type=Type.STRING),
+                    description="Flat list of add-on ID strings. Daily add-ons MUST be repeated once per night of stay (e.g. 2 nights of breakfast = 2 copies of 'BREAKFAST'). Daily per-item/person add-ons MUST be repeated (quantity x nights) times (e.g. 2 bikes for 2 nights = 4 copies of 'BICYCLE_RENTAL'). Airport Transfer can appear 1 time (one-way) or up to a maximum of 2 times (round trip: check-in and check-out). One-time stay add-ons (e.g. late checkout) appear exactly once."
+                )
             },
             required=["property_id", "room_id", "check_in", "check_out"]
         )
@@ -135,7 +139,11 @@ TOOL_SCHEMAS = [
                 "guests": Schema(type=Type.INTEGER),
                 "guest_name": Schema(type=Type.STRING),
                 "guest_phone": Schema(type=Type.STRING),
-                "add_on_ids": Schema(type=Type.ARRAY, items=Schema(type=Type.STRING))
+                "add_on_ids": Schema(
+                    type=Type.ARRAY,
+                    items=Schema(type=Type.STRING),
+                    description="Flat list of add-on ID strings. Daily add-ons MUST be repeated once per night of stay (e.g. 2 nights of breakfast = 2 copies of 'BREAKFAST'). Daily per-item/person add-ons MUST be repeated (quantity x nights) times (e.g. 2 bikes for 2 nights = 4 copies of 'BICYCLE_RENTAL'). Airport Transfer can appear 1 time (one-way) or up to a maximum of 2 times (round trip: check-in and check-out). One-time stay add-ons (e.g. late checkout) appear exactly once."
+                )
             },
             required=["property_id", "room_id", "check_in", "check_out", "guests", "guest_name", "guest_phone"]
         )
